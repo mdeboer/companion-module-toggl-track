@@ -1,0 +1,43 @@
+{
+  "name": "toggl-track",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "postinstall": "husky",
+    "format": "prettier -w .",
+    "package": "yarn build && companion-module-build",
+    "build": "npx rimraf dist && yarn build:main",
+    "build:main": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "lint:raw": "eslint --ext .ts --ext .js --ignore-pattern dist --ignore-pattern pkg",
+    "lint": "yarn lint:raw ."
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdeboer/companion-module-toggl-track.git"
+  },
+  "dependencies": {
+    "@companion-module/base": "~1.7.0",
+    "got": "^14.2.1",
+    "luxon": "^3.4.4"
+  },
+  "devDependencies": {
+    "@companion-module/tools": "^1.4.2",
+    "@types/luxon": "^3",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "typescript": "^5.3.3"
+  },
+  "prettier": "@companion-module/tools/.prettierrc.json",
+  "lint-staged": {
+    "*.{css,json,md,scss}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx,js,jsx}": [
+      "yarn lint:raw --fix"
+    ]
+  },
+  "packageManager": "yarn@4.2.2+sha256.1aa43a5304405be7a7cb9cb5de7b97de9c4e8ddd3273e4dad00d6ae3eb39f0ef"
+}
