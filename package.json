@@ -19,12 +19,12 @@
     "url": "git+https://github.com/mdeboer/companion-module-toggl-track.git"
   },
   "dependencies": {
-    "@companion-module/base": "~1.7.0",
+    "@companion-module/base": "~1.7.1",
     "got": "^14.2.1",
     "luxon": "^3.4.4"
   },
   "devDependencies": {
-    "@companion-module/tools": "^1.4.2",
+    "@companion-module/tools": "^2.1.0",
     "@types/luxon": "^3",
     "husky": "^9.0.10",
     "lint-staged": "^15.2.2",
@@ -39,5 +39,5 @@
       "yarn lint:raw --fix"
     ]
   },
-  "packageManager": "yarn@4.2.2+sha256.1aa43a5304405be7a7cb9cb5de7b97de9c4e8ddd3273e4dad00d6ae3eb39f0ef"
+  "packageManager": "yarn@4.5.0"
 }
